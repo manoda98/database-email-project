@@ -33,7 +33,7 @@ if ($result && $statement->rowCount() > 0) { ?>
 
     <h2>Latest emails</h2>
 
-    <table>
+<table>
         <thead>
             <tr>
                 <th>Id</th>
