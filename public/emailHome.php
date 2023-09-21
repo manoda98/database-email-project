@@ -46,18 +46,6 @@ if ($result && $statement->rowCount() > 0) { ?>
                 <th>BCC</th>
                 <th>action</th>
             </tr>
-
-            <tr>
-                            <th>Id</th>
-                            <th>Date</th>
-                            <th>Sender Email</th>
-                            <th>Receiver Email</th>
-                            <th>Subject</th>
-                            <th>Message</th>
-                            <th>CC</th>
-                            <th>BCC</th>
-                            <th>action</th>
-                        </tr>
         </thead>
         <tbody>
     <?php foreach ($result as $row) { ?>
