@@ -30,6 +30,9 @@ if (isset($_POST['submit'])) {
     try  {
         $connection = new PDO($dsn, $username, $password, $options);
 
+        // Start a transaction
+        $connection->beginTransaction();
+
         $new_category = array(
             "category_type"  => $_POST['category_type'],
             "colour"   => $_POST['colour'],
@@ -53,8 +56,12 @@ if (isset($_POST['submit'])) {
                 $statement->execute(array(':email_id' => $id, ':category_id' => $categoryId));
             }
         }
+        // Commit the transaction
+        $connection->commit();
 
     } catch(PDOException $error) {
+    // Rollback the transaction if an error occurs
+        $connection->rollBack();
         echo $sql . "<br>" . $error->getMessage();
     }
 }

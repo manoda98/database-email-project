@@ -26,3 +26,4 @@ CREATE TABLE EMAIL_CATEGORY (
     category_id INT(11) UNSIGNED,
     FOREIGN KEY (category_id) REFERENCES CATEGORY(category_id)
 );
+CREATE INDEX sender_index ON EMAIL (sender);
